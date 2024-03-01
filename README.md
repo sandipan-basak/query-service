@@ -48,7 +48,7 @@ Once the application is running, you can send queries to the /query endpoint usi
 
 ```sh
 curl -X 'POST' \
-  'http://localhost/query' \
+  'http://localhost:8000/query' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
