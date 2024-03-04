@@ -18,7 +18,6 @@ COHERE_API_KEY=<your-cohere-api-key>
 FAISS_INDEX_PATH=/usr/src/app/data/indices/combined_index.index
 FAISS_METADATA_PATH=/usr/src/app/data/indices/metadata.json
 REDIS_URL=redis://redis:6379
-OPEN_API_KEY=<your-open-api-key>
 ```
 This file includes the necessary configurations for external services and paths to data indices.
 
@@ -52,7 +51,7 @@ curl -X 'POST' \
   -H 'accept: application/json' \
   -H 'Content-Type: application/json' \
   -d '{
-  "queries": ["<your query here>"]
+  "query": "<your query here>"
 }'
 ```
 
