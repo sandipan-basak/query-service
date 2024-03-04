@@ -9,8 +9,6 @@ load_dotenv()
 co = cohere.Client(os.getenv('COHERE_API_KEY'))
 
 def rerank_documents_with_chunks(query, documents):
-    reranked_documents = {}
-
     texts_and_metadata = []
     for doc in documents:
         with open(doc['chunk_path'], 'r', encoding='utf-8') as file:
@@ -30,6 +28,6 @@ def rerank_documents_with_chunks(query, documents):
     ranked_indices = np.argsort(similarities)[::-1]
 
     # Store reranked documents with their text content in the result
-    reranked_documents[query] = [texts_and_metadata[i] for i in ranked_indices]
+    reranked_documents = [texts_and_metadata[i] for i in ranked_indices]
 
     return reranked_documents
