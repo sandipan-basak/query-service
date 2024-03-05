@@ -39,7 +39,9 @@ async def handle_query(
         # cache_service.store_embedding(query_embedding.copy(), response)
         # print(f"Query_embedding shape after store_embedding: {query_embedding.shape}")
 
-        return generate_prompt(query, reranked_documents)
+        prompt_created = generate_prompt(query, reranked_documents)
+        print(f'new prompt created: {prompt_created}')
+        return prompt_created
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")
