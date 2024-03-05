@@ -2,7 +2,7 @@
 
 ## Overview
 
-This application provides an API for handling queries by converting them into embeddings, searching for the most relevant documents using FAISS, optionally caching responses with Redis, and generating responses based on the documents' metadata. It's built with FastAPI and is designed to be containerized with Docker.
+This application provides an API for handling queries by converting them into embeddings, searching for the most relevant documents using FAISS, optionally caching responses with Redis, and generating prompts for further processing based on the documents' metadata and actual data chunks. It's built with FastAPI and is designed to be containerized with Docker.
 
 ## Prerequisites
 
@@ -55,7 +55,7 @@ curl -X 'POST' \
 }'
 ```
 
-Replace "<your query here>" with your actual query.
+Replace `<your query here>` with your actual query.
 
 ## Development
 
